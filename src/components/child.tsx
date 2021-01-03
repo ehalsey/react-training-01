@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
-
+import { Button, Input } from 'antd';
 
 export interface IChildProps {
     clickHandler: () => void;
@@ -12,6 +11,7 @@ export default class ChildComponent extends React.Component<IChildProps, {}> {
         return (
             <div>
                 <Button onClick={this.props.clickHandler}> {this.props.btnText} </Button>
+                <Input readOnly={true} placeholder="working"></Input>
             </div>
         )
     }
