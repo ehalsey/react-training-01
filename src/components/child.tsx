@@ -4,6 +4,7 @@ import { Button, Input } from 'antd';
 export interface IChildProps {
     clickHandler: () => void;
     btnText: string;
+    editing: boolean;
 }
 
 export default class ChildComponent extends React.Component<IChildProps, {}> {
@@ -11,7 +12,7 @@ export default class ChildComponent extends React.Component<IChildProps, {}> {
         return (
             <div>
                 <Button onClick={this.props.clickHandler}> {this.props.btnText} </Button>
-                <Input readOnly={true} placeholder="working"></Input>
+                <Input readOnly={!this.props.editing} placeholder="working"></Input>
             </div>
         )
     }
